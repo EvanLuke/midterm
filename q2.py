@@ -26,15 +26,28 @@ def askUserChoice():
     # 1. Asks the user to enter their input (between 1 and 4)
     # 2. Checks that the user's input is valid. If it's not valid (if it's not between 1 and 4), then ask the user to re-enter their input.
     # 3. Once the user enters a valid input, return that input as an integer.
+    sticksPicked = int(input('Choose between 1-4 sticks:'))
+    if 1 <= sticksPicked < 5:
+        return sticksPicked
+       
+    else:
+        print('Pick a number between 1-4:')
 
 
 def subtractSticks( number ):
     global sticks 
-    
+    sticks -= number
+    if sticks ==  1:
+        return True
+    elif sticks >= 1:
+        return False
+   
     # TODO: write code inside this function that:
     # 1. subtracts the parameter `number` from the global variable `sticks`
     # 2. checks if the number subtracted resulted in the last stick, if so, return True
     # 3. if there are still sticks left, return False
     
 def determineComputerChoice():
+    return random.randint(1,4)
+
     # TODO: write code inside this function that returns an integer between 1 and 4, random chosen by the computer
