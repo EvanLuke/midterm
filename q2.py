@@ -36,7 +36,7 @@ def askUserChoice():
             print('Choose a number between 1 - 4, ' + str(sticksPicked) + ' is not a valid number between 1 - 4')
             continue
     else:
-        return sticksPicked
+        return int(sticksPicked)
 
 
 
