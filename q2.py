@@ -20,7 +20,6 @@ def playGame():
             print('Computer lost!')
             break
         
-
 def askUserChoice():
     # TODO: write code in this functiont that:
     # 1. Asks the user to enter their input (between 1 and 4)
