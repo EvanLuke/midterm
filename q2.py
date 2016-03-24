@@ -26,18 +26,25 @@ def askUserChoice():
     # 1. Asks the user to enter their input (between 1 and 4)
     # 2. Checks that the user's input is valid. If it's not valid (if it's not between 1 and 4), then ask the user to re-enter their input.
     # 3. Once the user enters a valid input, return that input as an integer.
-    sticksPicked = int(input('Choose between 1-4 sticks:'))
-    if 1 <= sticksPicked < 5:
-        return sticksPicked
-       
+
+    valid = [1,2,3,4]
+    sticksPicked = ''
+
+    while sticksPicked not in valid:
+        print('Choose a number between 1 - 4:')
+        sticksPicked = int(input())
+        if sticksPicked not in valid:
+            print('Choose a number between 1 - 4, ' + str(sticksPicked) + ' is not a valid number between 1 - 4')
+            continue
     else:
-        print('Pick a number between 1-4:')
+        return sticksPicked
+
 
 
 def subtractSticks( number ):
     global sticks 
-    sticks -= number
-    if sticks ==  1:
+    sticks -= int(number)
+    if sticks <=  1:
         return True
     elif sticks >= 1:
         return False
